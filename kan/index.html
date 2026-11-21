@@ -1,0 +1,1078 @@
+<meta charset="utf-8">
+<title>כאן ביוטיוב</title>
+<meta name="description" content="דשבורד ביצועים של ערוצי היוטיוב של כאן, תאגיד השידור הישראלי">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=Secular+One&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#f3f4f7; --surface:#ffffff; --surface-2:#f7f8fa;
+  --ink:#10141c; --ink-2:#434b59; --ink-3:#5f6878;
+  --rule:#e1e4ea; --rule-strong:#c9ced7;
+  --focus:#1c5cab;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --seq0:#eef4fc; --seq1:#cde2fb; --seq2:#9ec5f4; --seq3:#5598e7; --seq4:#256abf; --seq5:#104281;
+  --good:#11753a; --bad:#b42318;
+  --onair:#c8102e;
+  --link:#1c5cab;
+  --fs:16px;
+  /* story screen: a deep "studio" navy hero, big display numbers, plain cards */
+  --display:"Secular One","IBM Plex Sans Hebrew","Arial Hebrew",Arial,sans-serif;
+  --hero:#0f2747; --hero-2:#173a66; --hero-ink:#ffffff; --hero-soft:#c9d6ea; --hero-tile:rgb(255 255 255 / .08);
+  --hero-up:#8ee6b0; --hero-down:#ffb3a6;
+  --bar-muted:#c9d3e2;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0f1115; --surface:#181b21; --surface-2:#1e2229;
+    --ink:#f2f4f7; --ink-2:#c3c8d1; --ink-3:#a2a9b5;
+    --rule:#2a2f38; --rule-strong:#3a404b;
+    --focus:#86b6ef;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --seq0:#1b2230; --seq1:#173157; --seq2:#184f95; --seq3:#256abf; --seq4:#5598e7; --seq5:#b7d3f6;
+    --good:#4cc47d; --bad:#ff8a80; --onair:#ff4d5e; --link:#86b6ef;
+    --hero:#13294a; --hero-2:#1b3d6b; --bar-muted:#3a4558;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0f1115; --surface:#181b21; --surface-2:#1e2229;
+  --ink:#f2f4f7; --ink-2:#c3c8d1; --ink-3:#a2a9b5;
+  --rule:#2a2f38; --rule-strong:#3a404b;
+  --focus:#86b6ef;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --seq0:#1b2230; --seq1:#173157; --seq2:#184f95; --seq3:#256abf; --seq4:#5598e7; --seq5:#b7d3f6;
+  --good:#4cc47d; --bad:#ff8a80; --onair:#ff4d5e; --link:#86b6ef;
+  --hero:#13294a; --hero-2:#1b3d6b; --bar-muted:#3a4558;
+}
+/* high-contrast mode from the accessibility menu */
+:root.hc{--ground:#fff;--surface:#fff;--surface-2:#fff;--ink:#000;--ink-2:#000;--ink-3:#1a1a1a;--rule:#000;--rule-strong:#000;--link:#0033cc;--focus:#000}
+:root.hc[data-theme="dark"]{--ground:#000;--surface:#000;--surface-2:#000;--ink:#fff;--ink-2:#fff;--ink-3:#eee;--rule:#fff;--rule-strong:#fff;--link:#9cf;--focus:#ff0}
+:root.links a{text-decoration:underline!important;text-decoration-thickness:2px!important;background:color-mix(in srgb,var(--link) 14%,transparent)}
+:root.nomotion *{transition:none!important;animation:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+[hidden]{display:none!important}
+html{font-size:var(--fs)}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans Hebrew","Arial Hebrew",Arial,sans-serif;font-size:1rem;line-height:1.55}
+.app{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
+.num,.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;inset-inline-start:16px;top:-60px;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:6px;z-index:50;text-decoration:none}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* masthead */
+.mast{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px;padding-block:28px 18px}
+.mast h1{margin:0;font-size:clamp(1.6rem,1.1rem + 2vw,2.35rem);font-weight:700;letter-spacing:-.01em;line-height:1.15;text-wrap:balance}
+.mast h1 .ch{color:var(--ink-3);font-weight:500}
+.stamp{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--ink-2);font-size:.875rem;margin-top:6px}
+.onair{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--onair);letter-spacing:.06em;font-size:.75rem}
+.onair::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--onair)}
+
+/* control bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(8px);border-block:1px solid var(--rule);padding-block:10px;margin-inline:-16px;padding-inline:16px}
+.bar-in{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.grp{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grp-l{font-size:.8125rem;color:var(--ink-2);font-weight:500}
+.sel{font:inherit;font-size:.9375rem;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;padding:7px 12px;min-width:0;max-width:100%}
+.sel:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.chlink{all:unset;cursor:pointer;color:var(--link);font-weight:600}
+.chlink:hover{text-decoration:underline}
+.chlink:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.minibar{display:inline-block;height:8px;border-radius:4px;background:var(--s1);vertical-align:middle;margin-inline-start:8px}
+.sec-l{margin:22px 0 -12px;font-size:.8125rem;font-weight:600;color:var(--ink-2);letter-spacing:.02em}
+.totals{margin-block:0}
+.hl-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hl-list li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 12px;background:var(--surface-2);border-radius:8px;font-size:.9375rem}
+.pill{font-size:.6875rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;border:1px solid currentColor;margin-top:2px}
+.pill.milestone{color:var(--good)} .pill.record{color:var(--onair)} .pill.top{color:var(--link)} .pill.trend{color:var(--ink-2)}
+.hl-note{color:var(--ink-2);font-size:.875rem;margin:8px 0 0}
+.pill.fast{color:var(--focus)}
+.idx{font-family:"IBM Plex Mono",monospace;font-weight:600}
+.idx.hi{color:var(--good)} .idx.lo{color:var(--bad)}
+.growth{display:grid;gap:18px}
+@media (min-width:860px){.growth{grid-template-columns:1fr 1fr}}
+.growth h3{margin:0 0 6px;font-size:.9375rem;font-weight:600}
+.pchip{display:inline-flex;align-items:center;gap:8px;padding:4px 6px 4px 12px;border-radius:999px;background:var(--surface-2);border:1px solid var(--rule-strong);font-size:.875rem;margin-inline-end:8px}
+.pchip button{all:unset;cursor:pointer;padding:2px 8px;border-radius:999px;color:var(--link)}
+.pchip button:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
+.more{all:unset;cursor:pointer;color:var(--link);font-size:.875rem;margin-top:10px;display:inline-block}
+.more:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--rule-strong);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{all:unset;cursor:pointer;padding:7px 13px;font-size:.875rem;color:var(--ink-2);border-inline-start:1px solid var(--rule)}
+.seg button:first-child{border-inline-start:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface);font-weight:600}
+.seg button:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+.chip{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid var(--rule-strong);border-radius:999px;font-size:.875rem;background:var(--surface);color:var(--ink-2)}
+.chip .sw{width:10px;height:10px;border-radius:3px;background:var(--c)}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:600}
+.chip[aria-pressed="false"] .sw{background:transparent;box-shadow:inset 0 0 0 2px var(--c)}
+.chip[aria-pressed="false"]{text-decoration:line-through;text-decoration-color:var(--ink-3)}
+.chip:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.spacer{flex:1}
+.a11y-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:8px;border:1px solid var(--rule-strong);background:var(--surface);font-size:.875rem;color:var(--ink)}
+.a11y-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.a11y-panel{position:absolute;inset-inline-end:16px;top:100%;margin-top:6px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:12px;box-shadow:0 12px 32px rgb(0 0 0/.18);padding:16px;width:min(300px,calc(100vw - 32px));display:grid;gap:10px}
+.a11y-panel h2{margin:0 0 4px;font-size:1rem}
+.a11y-row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.9rem}
+.a11y-panel .seg button{padding:5px 11px}
+
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-block:22px}
+.kpi{background:var(--surface);padding:16px 18px 14px;display:grid;gap:2px;align-content:start}
+.kpi .l{font-size:.8125rem;color:var(--ink-2);font-weight:500}
+.kpi .v{font-size:1.85rem;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.kpi .d{font-size:.8125rem;color:var(--ink-3);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.delta{font-weight:600;font-family:"IBM Plex Mono",monospace;font-size:.8125rem}
+.delta.up{color:var(--good)} .delta.down{color:var(--bad)}
+
+/* panels */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.panel{grid-column:span 12;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:18px 20px 16px;min-width:0}
+@media (min-width:980px){.w6{grid-column:span 6}.w7{grid-column:span 7}.w5{grid-column:span 5}}
+.ph{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:start;gap:6px 16px;margin-bottom:10px}
+.ph h2{margin:0;font-size:1.125rem;font-weight:700;text-wrap:balance}
+.ph p{margin:2px 0 0;color:var(--ink-2);font-size:.875rem;max-width:62ch}
+.tbl-toggle{all:unset;cursor:pointer;font-size:.8125rem;color:var(--link);padding:4px 2px;white-space:nowrap}
+.tbl-toggle:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.insight{margin:10px 0 0;padding:10px 12px;background:var(--surface-2);border-radius:8px;font-size:.9rem;color:var(--ink)}
+.insight b{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8125rem;color:var(--ink-2);margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:3px;background:var(--c);display:inline-block}
+
+svg.chart{display:block;width:100%;height:auto;overflow:visible}
+svg text{fill:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:11px}
+svg .gl{stroke:var(--rule);stroke-width:1}
+svg .base{stroke:var(--rule-strong);stroke-width:1}
+.chart-wrap{position:relative}
+.tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--surface);padding:8px 10px;border-radius:8px;font-size:.8125rem;line-height:1.45;max-width:280px;box-shadow:0 6px 20px rgb(0 0 0/.22)}
+.tip b{font-weight:700}
+.tip .num{font-family:"IBM Plex Mono",monospace}
+
+/* schedule grid */
+.sched-scroll{overflow-x:auto}
+.sched{display:grid;grid-template-columns:64px repeat(24,minmax(22px,1fr));gap:2px;min-width:640px;direction:rtl}
+.sched .hh{font-family:"IBM Plex Mono",monospace;font-size:.6875rem;color:var(--ink-3);text-align:center;padding-bottom:2px}
+.sched .dd{font-size:.8125rem;color:var(--ink-2);display:flex;align-items:center}
+.sched .c{height:26px;border-radius:3px;background:var(--seq0)}
+.sched .c.na{background:repeating-linear-gradient(135deg,transparent 0 4px,var(--rule) 4px 5px)}
+.sched .c:hover{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--ink-3);margin-top:10px;flex-wrap:wrap}
+.scale .ramp{display:flex;gap:2px}
+.scale .ramp i{width:22px;height:10px;border-radius:2px;display:block}
+
+/* bars (html) */
+.hbars{display:grid;gap:8px}
+.hb{display:grid;grid-template-columns:minmax(84px,120px) 1fr 76px;gap:10px;align-items:center;font-size:.875rem}
+.hb .t{height:18px;background:var(--surface-2);border-radius:4px;overflow:hidden;direction:rtl}
+.hb .f{height:100%;background:var(--c,var(--s1));border-radius:4px}
+.hb .v{font-family:"IBM Plex Mono",monospace;text-align:start;color:var(--ink);font-size:.8125rem}
+.hb .k{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hb .k small{color:var(--ink-3)}
+
+/* lists and tables */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:6px}
+.tabs button{all:unset;cursor:pointer;padding:8px 12px;font-size:.875rem;color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);font-weight:600}
+.tabs button:focus-visible{outline:3px solid var(--focus);outline-offset:-2px}
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.875rem}
+th{font-weight:600;color:var(--ink-2);text-align:start;font-size:.8125rem;padding:8px 8px;border-bottom:1px solid var(--rule-strong);white-space:nowrap}
+td{padding:9px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n,th.n{text-align:end;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.ttl{min-width:240px}
+td.ttl a{color:var(--ink);text-decoration:none}
+td.ttl a:hover{text-decoration:underline;color:var(--link)}
+.tag{display:inline-block;font-size:.6875rem;font-weight:600;padding:1px 7px;border-radius:999px;border:1px solid var(--c);color:var(--ink);white-space:nowrap}
+.tag.live{background:var(--onair);border-color:var(--onair);color:#fff}
+th button{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:center}
+th button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.search{flex:1 1 240px;display:flex}
+.search input{flex:1;font:inherit;font-size:.9375rem;padding:9px 12px;border:1px solid var(--rule-strong);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
+.search input:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
+.pager{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:10px;font-size:.875rem;color:var(--ink-2)}
+.pager button{all:unset;cursor:pointer;padding:6px 12px;border:1px solid var(--rule-strong);border-radius:8px;background:var(--surface);color:var(--ink)}
+.pager button[disabled]{opacity:.45;cursor:default}
+.pager button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.alt-table{margin-top:12px}
+.foot{margin-top:28px;color:var(--ink-2);font-size:.8125rem;display:grid;gap:6px;max-width:80ch}
+.foot h2{font-size:.9375rem;color:var(--ink);margin:0}
+.loading{padding:60px 0;text-align:center;color:var(--ink-2)}
+.nav{display:flex;gap:4px;overflow-x:auto;margin-bottom:10px;scrollbar-width:none}
+.nav button{all:unset;cursor:pointer;padding:8px 16px;border-radius:999px;font-size:.9375rem;font-weight:600;color:var(--ink-2);white-space:nowrap;border:1px solid transparent}
+.nav button:hover{border-color:var(--rule-strong)}
+.nav button[aria-selected="true"]{background:var(--ink);color:var(--surface)}
+.nav button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.dates{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.8125rem;color:var(--ink-2)}
+.dates label{display:inline-flex;gap:6px;align-items:center}
+.dates input{font-size:.875rem;padding:5px 8px;font-weight:500}
+.ph p.what{font-size:.9rem;max-width:72ch}
+.what::before{content:"מה רואים כאן: ";font-weight:700;color:var(--ink)}
+p.insight[id]::before{content:"מה זה אומר: ";font-weight:700}
+p.insight:empty{display:none}
+.sum{margin:0;padding-inline-start:22px;display:grid;gap:10px;font-size:1.0625rem;line-height:1.6}
+.sum a{color:var(--ink)}
+details.foot summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:.9375rem}
+details.foot[open] summary{margin-bottom:6px}
+@media (max-width:700px){.bar{position:static}}
+/* ---- bigger, calmer layout ---- */
+.app{max-width:1180px}
+.mast h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,1.3rem + 2.4vw,3rem)}
+.intro{margin:10px 0 0;font-size:1.0625rem;color:var(--ink-2);max-width:68ch;line-height:1.6}
+.nav button{font-size:1rem;padding:10px 20px}
+.more-opts{position:relative}
+.more-opts>summary{cursor:pointer;font-size:.875rem;color:var(--link);padding:6px 4px;list-style:none}
+.more-opts>summary::-webkit-details-marker{display:none}
+.more-opts>summary::after{content:" ▾"}
+.more-opts[open]>summary::after{content:" ▴"}
+.more-in{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding-top:8px}
+.screen{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:22px}
+.screen>.panel{grid-column:auto}
+.screen>.grid{gap:22px}
+.panel{border-radius:20px;padding:24px 26px 22px}
+.ph h2{font-family:var(--display);font-weight:400;font-size:1.45rem}
+.ph p.what{font-size:1rem;line-height:1.6}
+.insight{font-size:1rem;padding:14px 16px;border-radius:12px;line-height:1.6}
+.hero{background:radial-gradient(120% 140% at 0% 0%,var(--hero-2),var(--hero) 60%);color:var(--hero-ink);border-radius:26px;padding:clamp(24px,4vw,44px);display:grid;gap:14px}
+.eyebrow{margin:0;font-size:.9375rem;letter-spacing:.04em;color:var(--hero-soft);font-weight:600}
+.hero-h{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.75rem,1.1rem + 2.6vw,2.9rem);line-height:1.25;text-wrap:balance;max-width:26ch}
+.hero-sub{margin:0;font-size:1.125rem;color:var(--hero-soft);max-width:60ch;line-height:1.6}
+.hero-sub b{color:var(--hero-ink)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;background:var(--hero-tile);font-weight:700;font-family:"IBM Plex Mono",monospace;font-size:.95em}
+.badge.up{color:var(--hero-up)} .badge.down{color:var(--hero-down)}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:8px}
+.hs{background:var(--hero-tile);border-radius:16px;padding:16px 18px;display:grid;gap:4px;align-content:start}
+.hs .l{font-size:.9375rem;color:var(--hero-soft)}
+.hs .n{font-family:var(--display);font-size:clamp(1.9rem,1.4rem + 1.4vw,2.5rem);line-height:1.1}
+.hs .e{font-size:.875rem;color:var(--hero-soft)}
+.sec-head{display:grid;gap:4px;margin-top:8px}
+.sec-h{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,1.2rem + 1vw,1.9rem)}
+.sec-p{margin:0;color:var(--ink-2);font-size:1.0625rem;max-width:70ch}
+.cards{display:grid;gap:18px}
+@media (min-width:820px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:20px;padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.ctag{font-size:.8125rem;font-weight:700;color:var(--s1);letter-spacing:.03em}
+.cbig{font-family:var(--display);font-size:clamp(2.2rem,1.6rem + 1.6vw,2.9rem);line-height:1.05;color:var(--ink)}
+.card h3{margin:0;font-size:1.2rem;line-height:1.45;text-wrap:balance}
+.card p{margin:0;color:var(--ink-2);font-size:1rem;line-height:1.6}
+.cbars{display:grid;gap:7px;margin-top:6px}
+.cb{display:grid;grid-template-columns:minmax(72px,120px) 1fr auto;gap:10px;align-items:center;font-size:.875rem}
+.cb .cl{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cb .ct{height:12px;background:var(--surface-2);border-radius:6px;overflow:hidden}
+.cb .ct span{display:block;height:100%;background:var(--bar-muted);border-radius:6px}
+.cb.hi .ct span{background:var(--s1)}
+.cb.hi .cl{color:var(--ink);font-weight:700}
+.cb .cv{font-family:"IBM Plex Mono",monospace;font-size:.8125rem;color:var(--ink);min-width:3.5em;text-align:start}
+.todo-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+.todo-list li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:1.0625rem;line-height:1.6;padding:14px 16px;background:var(--surface-2);border-radius:14px}
+.todo-list li::before{content:"✓";display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--s1);color:var(--surface);font-weight:700}
+.empty{color:var(--ink-2);font-size:1.0625rem}
+@media (max-width:560px){
+  .kpi .v{font-size:1.5rem}
+  .hb{grid-template-columns:88px 1fr 64px}
+  .panel{padding:16px 14px}
+}
+</style>
+
+<div lang="he" dir="rtl">
+<a class="skip" href="#main">דלג לתוכן</a>
+<div class="app">
+  <header class="mast">
+    <div>
+      <h1 id="h1">כאן <span class="ch">ביוטיוב</span></h1>
+      <div class="stamp" id="stamp"><span>טוען נתונים…</span></div>
+      <p class="intro">איך הולך לערוצי היוטיוב של כאן: כמה צופים, מה עובד ומה כדאי לעשות. בוחרים תקופה (ואם רוצים, ערוץ אחד), ומסך "הסיפור" מסכם הכל במילים פשוטות. שאר המסכים מראים את הפירוט.</p>
+    </div>
+  </header>
+
+  <div class="bar" role="region" aria-label="ניווט וסינון">
+    <nav class="nav" id="nav" role="tablist" aria-label="מסכים">
+      <button type="button" role="tab" data-s="home" aria-selected="true">הסיפור</button>
+      <button type="button" role="tab" data-s="channels" id="nav-ch" aria-selected="false">ערוצים ותוכניות</button>
+      <button type="button" role="tab" data-s="works" aria-selected="false">מה עובד</button>
+      <button type="button" role="tab" data-s="videos" aria-selected="false">כל הסרטונים</button>
+    </nav>
+    <div class="bar-in">
+      <div class="grp">
+        <label class="grp-l" for="chan">ערוץ</label>
+        <select id="chan" class="sel"><option value="all">כל הערוצים</option></select>
+      </div>
+      <div class="grp" role="group" aria-labelledby="per-l">
+        <span class="grp-l" id="per-l">תקופה</span>
+        <div class="seg" id="period">
+          <button type="button" data-v="7" aria-pressed="false">שבוע</button>
+          <button type="button" data-v="30" aria-pressed="false">30 יום</button>
+          <button type="button" data-v="90" aria-pressed="true">90 יום</button>
+          <button type="button" data-v="365" aria-pressed="false">שנה</button>
+          <button type="button" data-v="0" aria-pressed="false">הכל</button>
+        </div>
+        <span class="dates"><label>מתאריך <input type="date" id="d-from" class="sel"></label><label>עד <input type="date" id="d-to" class="sel"></label></span>
+      </div>
+      <details class="more-opts" id="more-opts"><summary>עוד הגדרות</summary><div class="more-in">
+      <div class="grp" role="group" aria-labelledby="typ-l">
+        <span class="grp-l" id="typ-l">סוג תוכן</span>
+        <button type="button" class="chip" data-t="0" aria-pressed="true" style="--c:var(--s1)"><span class="sw"></span>סרטונים</button>
+        <button type="button" class="chip" data-t="1" aria-pressed="true" style="--c:var(--s2)"><span class="sw"></span>שורטס</button>
+        <button type="button" class="chip" data-t="2" aria-pressed="true" style="--c:var(--s3)"><span class="sw"></span>שידורים</button>
+      </div>
+      <div style="position:relative">
+        <button type="button" class="a11y-btn" id="a11y-open" aria-expanded="false" aria-controls="a11y-panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="12" cy="4" r="2.2"/><path d="M4 8.2l8 1.3 8-1.3.4 2-5.9 1.2v3.4l2.2 6.6-1.9.7-2.8-6.3-2.8 6.3-1.9-.7 2.2-6.6v-3.4L3.6 10.2z"/></svg>
+          נגישות
+        </button>
+        <div class="a11y-panel" id="a11y-panel" hidden role="dialog" aria-label="הגדרות נגישות">
+          <h2>הגדרות נגישות</h2>
+          <div class="a11y-row"><span id="fs-l">גודל טקסט</span>
+            <div class="seg" id="fs" role="group" aria-labelledby="fs-l">
+              <button type="button" data-v="16" aria-pressed="true">רגיל</button>
+              <button type="button" data-v="18" aria-pressed="false">גדול</button>
+              <button type="button" data-v="20" aria-pressed="false">ענק</button>
+            </div></div>
+          <div class="a11y-row"><span>ניגודיות גבוהה</span><div class="seg"><button type="button" id="hc" aria-pressed="false">הפעל</button></div></div>
+          <div class="a11y-row"><span>הדגשת קישורים</span><div class="seg"><button type="button" id="lk" aria-pressed="false">הפעל</button></div></div>
+          <div class="a11y-row"><span>עצירת אנימציות</span><div class="seg"><button type="button" id="nm" aria-pressed="false">הפעל</button></div></div>
+          <div class="a11y-row"><span>איפוס</span><div class="seg"><button type="button" id="a11y-reset">אפס הכל</button></div></div>
+        </div>
+      </div>
+      </div></details>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+   <div class="screen" data-screen="home">
+    <section class="hero" aria-labelledby="hero-h">
+      <p class="eyebrow" id="hero-eb">טוען נתונים…</p>
+      <h2 class="hero-h" id="hero-h">רגע, מחשבים את המספרים…</h2>
+      <p class="hero-sub" id="hero-sub"></p>
+      <div class="hero-stats" id="kpis"></div>
+    </section>
+    <div class="sec-head"><h2 class="sec-h">מה גילינו</h2><p class="sec-p">הדברים הכי חשובים שעולים מהנתונים בתקופה שבחרת. כל כרטיס משווה בין כמה אפשרויות, והפס הכחול הוא המנצח.</p></div>
+    <div class="cards" id="insights"></div>
+    <section class="panel" aria-labelledby="h-todo">
+      <h2 id="h-todo" class="sec-h">אז מה כדאי לעשות?</h2>
+      <p class="sec-p">צעדים שהנתונים מצביעים עליהם, לפי מה שעבד עד עכשיו. כדאי לנסות ולבדוק שוב בעוד חודש.</p>
+      <ul class="todo-list" id="todo"></ul>
+    </section>
+    <section class="panel" aria-labelledby="h-hl" id="hl-panel">
+      <div class="ph"><div><h2 id="h-hl">מה בלט היום</h2><p class="what" id="hl-sub">סרטונים שקפצו, שיאים חדשים ואבני דרך. הרשימה מתעדכנת כל בוקר.</p></div></div>
+      <ul class="hl-list" id="hl"></ul>
+      <p class="hl-note" id="hl-note"></p>
+    </section>
+   </div>
+
+   <div class="screen" data-screen="channels" hidden>
+    <h2 class="sec-l" id="tot-l">המצב היום</h2>
+    <section class="kpis totals" id="totals" aria-labelledby="tot-l"></section>
+    <div class="grid">
+      <section class="panel" aria-labelledby="h-gr">
+        <div class="ph"><div><h2 id="h-gr">צמיחה יום אחרי יום</h2><p class="what">בגרף השמאלי, כל עמודה היא יום אחד, והגובה שלה הוא כמה צפיות נוספו באותו יום. עמודה גבוהה = יום חזק. הגרף הימני מראה כמה מנויים יש.</p></div>
+          <button type="button" class="tbl-toggle" data-for="growth" aria-expanded="false">הצג כטבלה</button></div>
+        <div class="growth"><div><h3>צפיות שנוספו בכל יום</h3><div class="chart-wrap" id="gr-views"></div></div><div><h3>מנויים</h3><div class="chart-wrap" id="gr-subs"></div></div></div>
+        <div id="growth"></div>
+        <p class="insight" id="gr-ins"></p>
+      </section>
+      <section class="panel" aria-labelledby="h-cmp" id="cmp-panel" hidden>
+        <div class="ph"><div><h2 id="h-cmp">איך כל ערוץ הלך</h2><p class="what">כל שורה היא ערוץ, לפי הסרטונים שעלו בתקופה שבחרת. "סרטון טיפוסי" = כמה צפיות מקבל סרטון רגיל בערוץ. לחיצה על שם ערוץ מציגה רק אותו.</p></div></div>
+        <div class="tscroll" id="cmp"></div>
+        <p class="insight" id="cmp-ins"></p>
+      </section>
+      <section class="panel" aria-labelledby="h-prog">
+        <div class="ph"><div><h2 id="h-prog">תוכניות</h2><p class="what" id="prog-sub">כל שורה היא תוכנית, מסודרות לפי כמות הצפיות. לחיצה על שם תוכנית מציגה את הסרטונים שלה.</p></div></div>
+        <div class="tscroll" id="prog"></div>
+        <button type="button" class="more" id="prog-more" hidden></button>
+        <p class="insight" id="prog-ins"></p>
+      </section>
+    </div>
+   </div>
+
+   <div class="screen" data-screen="works" hidden>
+    <div class="grid">
+      <section class="panel" aria-labelledby="h-sched" id="sched-panel">
+        <div class="ph"><div><h2 id="h-sched">מתי כדאי להעלות</h2><p class="what">כל משבצת היא יום ושעה (שעון ישראל). ככל שהמשבצת כהה יותר, סרטונים שעלו באותה שעה קיבלו יותר צפיות. משבצת מקווקוות = עלו בה מעט מדי סרטונים כדי לדעת. שידורים חיים לא נכללים.</p></div>
+          <button type="button" class="tbl-toggle" data-for="sched" aria-expanded="false">הצג כטבלה</button></div>
+        <div class="sched-scroll"><div class="sched" id="sched" role="img" aria-labelledby="h-sched"></div></div>
+        <div class="scale" id="sched-scale"></div>
+        <div id="sched-alt"></div>
+        <p class="insight" id="sched-ins"></p>
+      </section>
+      <section class="panel w6" aria-labelledby="h-dur">
+        <div class="ph"><div><h2 id="h-dur">איזה אורך עובד</h2><p class="what">כמה צפיות מקבל סרטון טיפוסי לפי האורך שלו. פס ארוך = האורך הזה עובד טוב. המספר הקטן ליד האורך = כמה סרטונים עלו באורך הזה.</p></div></div>
+        <div class="hbars" id="dur"></div>
+        <p class="insight" id="dur-ins"></p>
+      </section>
+      <section class="panel w6" aria-labelledby="h-kw">
+        <div class="ph"><div><h2 id="h-kw">מילים בכותרת שמביאות צפיות</h2><p class="what" id="kw-sub">מילים שחוזרות בכותרות, ומה קורה לצפיות כשהן מופיעות.</p></div></div>
+        <div class="tabs" role="tablist" id="kw-tabs">
+          <button type="button" role="tab" aria-selected="true" data-v="top">הכי חזקות</button>
+          <button type="button" role="tab" aria-selected="false" data-v="bottom">הכי חלשות</button>
+        </div>
+        <div class="hbars" id="kw"></div>
+      </section>
+      <section class="panel w7" aria-labelledby="h-trend">
+        <div class="ph"><div><h2 id="h-trend">האם סרטונים מקבלים יותר צפיות מבעבר</h2><p class="what" id="trend-sub"></p></div>
+          <button type="button" class="tbl-toggle" data-for="trend" aria-expanded="false">הצג כטבלה</button></div>
+        <div class="chart-wrap" id="trend"></div>
+        <p class="insight" id="trend-ins"></p>
+      </section>
+      <section class="panel w5" aria-labelledby="h-vol">
+        <div class="ph"><div><h2 id="h-vol">כמה עולה</h2><p class="what" id="vol-sub">כמה סרטונים עלו בכל תקופה, לפי סוג.</p></div>
+          <button type="button" class="tbl-toggle" data-for="vol" aria-expanded="false">הצג כטבלה</button></div>
+        <div class="chart-wrap" id="vol"></div>
+        <div class="legend" id="vol-leg"></div>
+      </section>
+    </div>
+   </div>
+
+   <div class="screen" data-screen="videos" hidden>
+    <div class="grid">
+      <section class="panel" aria-labelledby="h-top">
+        <div class="ph"><div><h2 id="h-top">עשרת הבולטים</h2><p class="what">עשרת הסרטונים הבולטים בתקופה. הלשוניות משנות את הסדר: לפי צפיות, לפי קצב (צפיות ליום, כדי שסרטון חדש לא יפסיד לישן), או לפי כמה אנשים הגיבו.</p></div></div>
+        <div class="tabs" role="tablist" id="top-tabs">
+          <button type="button" role="tab" aria-selected="true" data-v="views">הכי נצפים</button>
+          <button type="button" role="tab" aria-selected="false" data-v="vpd">צוברים הכי מהר</button>
+          <button type="button" role="tab" aria-selected="false" data-v="eng">הכי הרבה לייקים ותגובות</button>
+          <button type="button" role="tab" aria-selected="false" data-v="idx">חדשים שפותחים חזק</button>
+          <button type="button" role="tab" aria-selected="false" data-v="gain" id="tab-gain" hidden>קפצו מאתמול</button>
+        </div>
+        <div class="tscroll" id="top"></div>
+      </section>
+      <section class="panel" aria-labelledby="h-all">
+        <div class="ph"><div><h2 id="h-all">חיפוש בכל הסרטונים</h2><p id="all-sub"></p></div></div>
+        <div class="tools">
+          <label class="search"><span class="sr">חיפוש בכותרות</span><input id="q" type="search" placeholder="חיפוש בכותרות, למשל: זהבי, עזה, השפים" autocomplete="off"></label>
+        </div>
+        <div class="tscroll" id="all"></div>
+        <div class="pager" id="pager"></div>
+      </section>
+    </div>
+   </div>
+
+    <details class="foot">
+      <summary>על הנתונים ואיך לקרוא אותם</summary>
+      <div>מקור: YouTube Data API, הממשק הרשמי של יוטיוב, תשעת ערוצי היוטיוב של כאן: כאן 11, כאן חדשות, כאן חינוכית, כאן ארכיון, כאן גימל, כאן הסכתים, כאן תרבות, כאן כלכלי וכאן 88. הנתונים מתעדכנים אוטומטית פעם ביום. אלה נתונים ציבוריים בלבד: צפיות, לייקים ותגובות. זמן צפייה, חשיפות ונתוני קהל זמינים רק לבעלי הערוץ.</div>
+      <div>"סרטון טיפוסי": מסדרים את כל הסרטונים לפי צפיות ולוקחים את זה שבאמצע. חצי מהסרטונים קיבלו יותר, חצי פחות. משתמשים בו במקום ממוצע, כי להיט ויראלי אחד מנפח ממוצע ונותן תמונה לא נכונה.</div>
+      <div>"צפיות ליום": צפיות חלקי מספר הימים מאז שהסרטון עלה, כדי להשוות בהגינות בין סרטון חדש לישן. "לייקים ותגובות": כמה לייקים ותגובות יש על כל 100 צפיות.</div>
+      <div>נגישות: הדף תומך בניווט מלא במקלדת, בקוראי מסך, בהגדלת טקסט, בניגודיות גבוהה ובמצב כהה. כל גרף זמין גם כטבלה.</div>
+    </details>
+  </main>
+</div>
+</div>
+<div class="tip" id="tip" hidden role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const TYPES = ['סרטון', 'שורט', 'שידור'];
+const TCOL = ['var(--s1)', 'var(--s2)', 'var(--s3)'];
+const DAYS = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
+const MON = ['ינו׳', 'פבר׳', 'מרץ', 'אפר׳', 'מאי', 'יוני', 'יולי', 'אוג׳', 'ספט׳', 'אוק׳', 'נוב׳', 'דצמ׳'];
+const nf = new Intl.NumberFormat('he-IL');
+const fmt = n => n == null || n < 0 ? '–' : nf.format(Math.round(n));
+const cmp = n => n >= 1e9 ? (n / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B' : n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1).replace(/\.0$/, '') + 'K' : String(Math.round(n));
+const heNum = n => n >= 1e9 ? (n / 1e9).toFixed(1).replace(/\.0$/, '') + ' מיליארד' : n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + ' מיליון' : n >= 1e4 ? Math.round(n / 1e3) + ' אלף' : nf.format(Math.round(n));
+const more = k => k >= 1.95 ? `פי ${k < 10 ? k.toFixed(1).replace(/\.0$/, '') : Math.round(k)} יותר` : `${Math.round((k - 1) * 100)}% יותר`;
+const pct = (x, d = 1) => (x * 100).toFixed(d) + '%';
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const median = a => { if (!a.length) return 0; const s = Float64Array.from(a).sort(); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const tc = s => { s = Math.round(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return (h ? String(h).padStart(2, '0') + ':' : '00:') + String(m).padStart(2, '0') + ':' + String(x).padStart(2, '0'); };
+const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+/* ---------- accessibility menu ---------- */
+const root = document.documentElement;
+const a11y = { fs: '16', hc: '0', lk: '0', nm: '0' };
+try { Object.assign(a11y, JSON.parse(store.get('a11y') || '{}')); } catch (e) {}
+function applyA11y() {
+  root.style.setProperty('--fs', a11y.fs + 'px');
+  root.classList.toggle('hc', a11y.hc === '1'); root.classList.toggle('links', a11y.lk === '1'); root.classList.toggle('nomotion', a11y.nm === '1');
+  $$('#fs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === a11y.fs));
+  [['hc', 'hc'], ['lk', 'lk'], ['nm', 'nm']].forEach(([id, k]) => { const b = $('#' + id); b.setAttribute('aria-pressed', a11y[k] === '1'); b.textContent = a11y[k] === '1' ? 'פעיל' : 'הפעל'; });
+  store.set('a11y', JSON.stringify(a11y));
+}
+$$('#fs button').forEach(b => b.onclick = () => { a11y.fs = b.dataset.v; applyA11y(); });
+['hc', 'lk', 'nm'].forEach(k => $('#' + k).onclick = () => { a11y[k] = a11y[k] === '1' ? '0' : '1'; applyA11y(); });
+$('#a11y-reset').onclick = () => { Object.assign(a11y, { fs: '16', hc: '0', lk: '0', nm: '0' }); applyA11y(); };
+const openBtn = $('#a11y-open'), panel = $('#a11y-panel');
+const setPanel = open => { panel.hidden = !open; openBtn.setAttribute('aria-expanded', open); if (open) panel.querySelector('button').focus(); };
+openBtn.onclick = () => setPanel(panel.hidden);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) { setPanel(false); openBtn.focus(); } });
+document.addEventListener('click', e => { if (!panel.hidden && !panel.contains(e.target) && !openBtn.contains(e.target)) setPanel(false); });
+applyA11y();
+
+/* ---------- tooltip ---------- */
+const tip = $('#tip');
+function showTip(html, x, y) {
+  tip.innerHTML = html; tip.hidden = false;
+  const r = tip.getBoundingClientRect(), W = innerWidth;
+  let left = x + 14; if (left + r.width > W - 8) left = x - r.width - 14; left = Math.max(8, left);
+  let top = y - r.height - 12; if (top < 8) top = y + 16;
+  tip.style.left = left + 'px'; tip.style.top = top + 'px';
+}
+const hideTip = () => { tip.hidden = true; };
+
+/* ---------- state ---------- */
+const S = { prog: null, progAll: false, preset: ['7','30','90','365','0'].includes(store.get('preset')) ? store.get('preset') : '90', from: 0, to: 0, days: 90, screen: store.get('screen') || 'home', types: new Set([0, 1, 2]), topTab: 'views', kwTab: 'top', q: '', sort: 'ts', dir: -1, page: 0, alt: {} };
+let D, R, NOW;
+
+const tzFmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jerusalem', weekday: 'short', hour: 'numeric', hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric' });
+const WD = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+let IDX, CUR = 'all';
+const cache = {}, PROGS = {};
+const progName = r => r.prog >= 0 ? (PROGS[r.ch] || [])[r.prog] : null;
+const chName = i => IDX.channels[i].name;
+function prep(rows, ci) {
+  return rows.map(r => {
+    const p = Object.fromEntries(tzFmt.formatToParts(new Date(r[2] * 1000)).map(x => [x.type, x.value]));
+    const age = Math.max((NOW - r[2]) / 86400, 1);
+    return { id: r[0], title: r[1], ts: r[2], type: r[3], views: r[4], likes: r[5], comments: r[6], dur: r[7], live: r[8], gain: r[9] ?? -1, prog: r[10] ?? -1, idx: r[11] ?? -1, ch: ci,
+      wd: WD[p.weekday], hr: +p.hour % 24, y: +p.year, m: +p.month, d: +p.day, age,
+      vpd: r[4] / age, eng: r[4] ? (r[5] + Math.max(r[6], 0)) / r[4] : 0, lt: r[1].toLowerCase() };
+  });
+}
+function loadSlug(slug) {
+  if (cache[slug]) return Promise.resolve(cache[slug]);
+  const ci = IDX.channels.findIndex(c => c.slug === slug);
+  return fetch('data/' + slug + '.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => { PROGS[ci] = d.progs || []; return (cache[slug] = prep(d.rows, ci)); });
+}
+const fromHash = () => { const h = location.hash.slice(1); return IDX.channels.some(c => c.slug === h) ? h : IDX.channels.length === 1 ? IDX.channels[0].slug : 'all'; };
+fetch('data/channels.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(idx => {
+  IDX = idx;
+  NOW = Math.max(...idx.channels.map(c => Date.parse(c.fetched + '+03:00') / 1000)) || Date.now() / 1000;
+  if (idx.channels.length === 1) { $('#chan').closest('.grp').hidden = true; }
+  $('#chan').innerHTML = (idx.channels.length > 1 ? '<option value="all">כל הערוצים</option>' : '') + idx.channels.map(c => `<option value="${c.slug}">${esc(c.name)}</option>`).join('');
+  setRange(S.preset);
+  load(fromHash());
+}).catch(() => { $('#kpis').innerHTML = '<div class="loading">לא הצלחנו לטעון את הנתונים. נסו לרענן את הדף.</div>'; });
+addEventListener('hashchange', () => { if (IDX && fromHash() !== CUR) load(fromHash()); });
+$('#chan').addEventListener('change', e => load(e.target.value));
+
+function load(slug) {
+  CUR = slug; $('#chan').value = slug;
+  if (IDX.channels.length > 1 && location.hash.slice(1) !== slug) location.hash = slug;
+  const slugs = slug === 'all' ? IDX.channels.map(c => c.slug) : [slug];
+  let done = 0;
+  const need = slugs.filter(x => !cache[x]).length;
+  if (need) $('#kpis').innerHTML = `<div class="loading" role="status">טוען ${slug === 'all' ? `${need} ערוצים` : 'נתונים'}…</div>`;
+  Promise.all(slugs.map(x => loadSlug(x).then(v => { done++; if (need > 1) $('#kpis').innerHTML = `<div class="loading" role="status">טוען ערוצים: ${done} מתוך ${slugs.length}</div>`; return v; })))
+    .then(parts => {
+      if (CUR !== slug) return;
+      R = parts.flat(); S.page = 0; S.prog = null;
+      const chs = slug === 'all' ? IDX.channels : IDX.channels.filter(c => c.slug === slug);
+      const f = new Date(NOW * 1000);
+      $('#h1').innerHTML = slug === 'all' ? 'כאן <span class="ch">ביוטיוב</span>' : `${esc(chs[0].name)} <span class="ch">ביוטיוב</span>`;
+      document.title = slug === 'all' ? 'כאן ביוטיוב' : `${chs[0].name} ביוטיוב`;
+      $('#stamp').innerHTML = (slug === 'all'
+        ? `<span>${chs.length} ערוצים</span><span>${fmt(chs.reduce((a, c) => a + c.subs, 0))} מנויים במצטבר</span><span>${fmt(R.length)} סרטונים</span>`
+        : `<span><a href="https://www.youtube.com/${esc(chs[0].handle)}" target="_blank" rel="noopener" class="mono">${esc(chs[0].handle)}</a></span><span>${fmt(chs[0].subs)} מנויים</span><span>${fmt(R.length)} סרטונים</span>`)
+        + `<span>עודכן ${f.toLocaleDateString('he-IL')} ${f.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}</span>`
+        + (R.some(r => r.live) ? '<span class="onair">LIVE בזמן העדכון</span>' : '');
+      $('#cmp-panel').hidden = slug !== 'all';
+      $('#nav-ch').textContent = slug === 'all' ? 'ערוצים ותוכניות' : 'תוכניות';
+      syncRange();
+      $('#tot-l').textContent = slug === 'all' ? 'המצב היום, כל הערוצים יחד' : 'המצב היום';
+      renderTotals(chs); renderHl(slug); renderGrowth(chs);
+      $('#tab-gain').hidden = !R.some(r => r.gain > 0);
+      if ($('#tab-gain').hidden && S.topTab === 'gain') { S.topTab = 'views'; $$('#top-tabs button').forEach(x => x.setAttribute('aria-selected', x.dataset.v === 'views')); }
+      render();
+    }).catch(() => { $('#kpis').innerHTML = '<div class="loading">לא הצלחנו לטעון את הערוץ. נסו לרענן את הדף.</div>'; });
+}
+
+/* ---------- date range ---------- */
+const isoDay = ts => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jerusalem' }).format(new Date(ts * 1000));
+const heDay = ts => new Date(ts * 1000).toLocaleDateString('he-IL', { timeZone: 'Asia/Jerusalem' });
+const firstTs = () => R && R.length ? R.reduce((a, r) => r.ts < a ? r.ts : a, Infinity) : S.from;
+function setRange(preset) {
+  S.preset = preset; const p = +preset;
+  S.to = NOW; S.from = p ? NOW - p * 86400 : 0;
+  store.set('preset', preset); syncRange();
+}
+function syncRange() {
+  const start = Math.max(S.from, firstTs() || 0);
+  S.days = Math.max(1, (S.to - start) / 86400);
+  $$('#period button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === S.preset));
+  if (start) $('#d-from').value = isoDay(start);
+  $('#d-to').value = isoDay(Math.min(S.to, NOW));
+  $('#d-from').max = $('#d-to').max = isoDay(NOW);
+  if (R && R.length) $('#d-from').min = $('#d-to').min = isoDay(firstTs());
+}
+function perLabel() {
+  return { '7': 'בשבוע האחרון', '30': 'ב-30 הימים האחרונים', '90': 'ב-90 הימים האחרונים', '365': 'בשנה האחרונה', '0': 'מאז ומעולם' }[S.preset]
+    || `בין ${heDay(S.from)} ל-${heDay(Math.min(S.to, NOW))}`;
+}
+const curRows = () => R.filter(r => S.types.has(r.type) && r.ts >= S.from && r.ts <= S.to);
+function prevSlice() {
+  if (S.preset === '0') return null;
+  const len = S.to - S.from;
+  return R.filter(r => S.types.has(r.type) && r.ts >= S.from - len && r.ts < S.from);
+}
+
+/* ---------- screens ---------- */
+function show(sc) {
+  if (!document.querySelector(`.screen[data-screen="${sc}"]`)) sc = 'home';
+  S.screen = sc; store.set('screen', sc);
+  $$('.screen').forEach(x => x.hidden = x.dataset.screen !== sc);
+  $$('#nav button').forEach(b => b.setAttribute('aria-selected', b.dataset.s === sc));
+}
+$$('#nav button').forEach(b => b.onclick = () => { show(b.dataset.s); scrollTo({ top: 0 }); });
+show(S.screen);
+
+function render() {
+  const c = curRows(), p = prevSlice();
+  if (CUR === 'all') renderCmp(c, p);
+  renderProg(c, p); renderKpis(c, p); renderTrend(c); renderSched(c); renderDur(c); renderKw(c); renderTop(c); renderAll(c); renderSummary(c, p);
+}
+
+/* ---------- the bottom line (home screen) ---------- */
+function renderSummary(c, p) {
+  if (c.length < 10) { $('#insights').innerHTML = '<p class="empty">בתקופה הזו עלו מעט מדי סרטונים כדי ללמוד מהם משהו. נסו לבחור תקופה ארוכה יותר.</p>'; $('#todo').innerHTML = ''; return; }
+  const cards = [], todo = [];
+  const sv = a => a.reduce((s, r) => s + r.views, 0), all = sv(c), md = median(c.map(r => r.views));
+  const ratio = (a, b) => a / Math.max(b, 1);
+  const SING = ['סרטון מלא', 'שורט', 'שידור חי'], PLUR = ['סרטונים מלאים', 'שורטס', 'שידורים חיים'];
+  // who brings the views
+  if (CUR === 'all') {
+    const by = IDX.channels.map((ch, i) => ({ l: ch.name, v: sv(c.filter(r => r.ch === i)) })).filter(b => b.v > 0).sort((a, b) => b.v - a.v);
+    if (by.length > 1) {
+      const sh = by[0].v / all;
+      cards.push({ tag: 'מי מביא את הצפיות', big: Math.round(sh * 100) + '%', title: `הסרטונים של ${esc(by[0].l)} מביאים ${Math.round(sh * 100)}% מכל הצפיות`,
+        text: `מתוך ${heNum(all)} צפיות בתקופה, ${heNum(by[0].v)} הגיעו מהסרטונים של ${esc(by[0].l)}. במקום השני והשלישי: ${by.slice(1, 3).map(b => esc(b.l)).join(' ו')}.`,
+        bars: by.slice(0, 5).map((b, i) => [b.l, b.v, Math.round(b.v / all * 100) + '%', i === 0]) });
+    }
+  }
+  // strongest show
+  const groups = new Map();
+  c.forEach(r => { if (r.prog >= 0) { const k = r.ch * 1e5 + r.prog; let g = groups.get(k); if (!g) groups.set(k, g = []); g.push(r); } });
+  const progs = [...groups.values()].map(rs => ({ name: progName(rs[0]), n: rs.length, m: median(rs.map(r => r.views)), v: sv(rs) }));
+  const topP = progs.slice().sort((a, b) => b.v - a.v);
+  if (CUR !== 'all' && progs.length > 1 && topP[0].v / all >= 0.15) {
+    const top = topP;
+    cards.push({ tag: 'מה מביא את הצפיות', big: Math.round(top[0].v / all * 100) + '%', title: `הסרטונים של ${esc(top[0].name)} מביאים ${Math.round(top[0].v / all * 100)}% מהצפיות של הערוץ`,
+      text: `${fmt(top[0].n)} סרטונים של ${esc(top[0].name)} קיבלו יחד ${heNum(top[0].v)} צפיות.`, bars: top.slice(0, 5).map((b, i) => [b.name, b.v, heNum(b.v), i === 0]) });
+  }
+  const best = progs.filter(x => x.n >= 5).sort((a, b) => b.m - a.m)[0];
+  if (best && ratio(best.m, md) >= 1.3) {
+    const k = ratio(best.m, md);
+    cards.push({ tag: 'התוכנית הכי חזקה', big: more(k).replace(' יותר', ''), title: `סרטון של ${esc(best.name)} מקבל ${more(k)} צפיות מסרטון רגיל`,
+      text: `סרטון רגיל מקבל ${fmt(md)} צפיות. סרטון של ${esc(best.name)} מקבל בדרך כלל ${fmt(best.m)}. זה מבוסס על ${fmt(best.n)} סרטונים של ${esc(best.name)} בתקופה.`,
+      bars: [[best.name, best.m, fmt(best.m), true], ['סרטון רגיל', md, fmt(md), false]] });
+    todo.push(`להעלות עוד סרטונים של <b>${esc(best.name)}</b>, או סרטונים בסגנון דומה. סרטון של ${esc(best.name)} מקבל ${more(k)} צפיות מסרטון רגיל.`);
+  }
+  // which type of content
+  const tv = [0, 1, 2].map(t => { const a = c.filter(r => r.type === t); return { t, n: a.length, m: median(a.map(r => r.views)) }; }).filter(o => o.n >= 10);
+  if (tv.length >= 2) {
+    const srt = tv.slice().sort((a, b) => b.m - a.m), k = ratio(srt[0].m, srt[srt.length - 1].m), lot = tv.reduce((a, b) => b.n > a.n ? b : a);
+    cards.push({ tag: 'איזה סוג תוכן עובד', big: PLUR[srt[0].t], title: `${SING[srt[0].t]} מקבל ${more(k)} צפיות מ${SING[srt[srt.length - 1].t]}`,
+      text: tv.map(o => `עלו ${fmt(o.n)} ${PLUR[o.t]}, ואחד כזה מקבל בדרך כלל ${fmt(o.m)} צפיות`).join('. ') + '.',
+      bars: srt.map((o, i) => [PLUR[o.t], o.m, fmt(o.m), i === 0]) });
+    const kk = ratio(srt[0].m, lot.m);
+    if (lot.t !== srt[0].t && kk >= 1.3) todo.push(`לשקול להעלות יותר <b>${PLUR[srt[0].t]}</b>. היום רוב מה שעולה הוא ${PLUR[lot.t]}, אבל ${SING[srt[0].t]} מקבל ${more(kk)} צפיות.`);
+  }
+  // which day
+  const pool = c.filter(r => r.type !== 2);
+  const byDay = DAYS.map((_, d) => { const a = pool.filter(r => r.wd === d).map(r => r.views); return a.length >= 10 ? median(a) : 0; });
+  const okDays = byDay.filter(v => v > 0).length;
+  if (okDays >= 4) {
+    const bd = byDay.indexOf(Math.max(...byDay)), wd = byDay.indexOf(Math.min(...byDay.map(v => v || Infinity))), k = ratio(byDay[bd], byDay[wd]);
+    const hrs = Array.from({ length: 24 }, (_, h) => { const a = pool.filter(r => r.wd === bd && r.hr === h).map(r => r.views); return a.length >= 6 ? median(a) : 0; });
+    const bh = hrs.indexOf(Math.max(...hrs));
+    cards.push({ tag: 'מתי להעלות', big: `יום ${DAYS[bd]}`, title: `סרטונים שעולים ביום ${DAYS[bd]} מקבלים ${more(k)} צפיות מאלה שעולים ביום ${DAYS[wd]}`,
+      text: `סרטון שעלה ביום ${DAYS[bd]} קיבל בדרך כלל ${fmt(byDay[bd])} צפיות, וביום ${DAYS[wd]} רק ${fmt(byDay[wd])}. פירוט לפי שעות במסך "מה עובד".`,
+      bars: DAYS.map((n, d) => [n, byDay[d], byDay[d] ? fmt(byDay[d]) : '–', d === bd]) });
+    if (k >= 1.2) todo.push(`לתזמן את הסרטונים החשובים ליום <b>${DAYS[bd]}</b>${hrs[bh] ? `, בסביבות <b>${String(bh).padStart(2, '0')}:00</b>` : ''}. ביום ${DAYS[wd]} סרטונים מקבלים הכי מעט צפיות.`);
+  }
+  // which length
+  const lens = DB.map(([lo, hi, l]) => { const a = pool.filter(r => r.dur >= lo && r.dur < hi); return { l, n: a.length, v: median(a.map(r => r.views)) }; }).filter(o => o.n >= 10);
+  if (lens.length >= 3) {
+    const bl = lens.reduce((a, b) => b.v > a.v ? b : a), ml = lens.reduce((a, b) => b.n > a.n ? b : a), k = ratio(bl.v, ml.v);
+    if (bl !== ml && k >= 1.3) {
+      cards.push({ tag: 'איזה אורך עובד', big: bl.l, title: `סרטונים באורך ${bl.l} מקבלים ${more(k)} צפיות מהאורך הנפוץ`,
+        text: `רוב הסרטונים שעולים הם באורך ${ml.l} (${fmt(ml.n)} סרטונים), והם מקבלים בדרך כלל ${fmt(ml.v)} צפיות. סרטון באורך ${bl.l} מקבל ${fmt(bl.v)}.`,
+        bars: lens.map(o => [o.l, o.v, fmt(o.v), o === bl]) });
+      todo.push(`לנסות יותר סרטונים באורך <b>${bl.l}</b>. רוב מה שעולה היום הוא באורך ${ml.l}.`);
+    }
+  }
+  // words in titles
+  const minN = Math.max(8, Math.round(c.length * .006)), wm = new Map();
+  for (const r of c) new Set((r.lt.match(/[֐-׿a-z"'״׳]{3,}/g) || []).filter(w => !STOP.has(w))).forEach(w => { let a = wm.get(w); if (!a) wm.set(w, a = []); a.push(r.views); });
+  const words = [...wm].filter(([, a]) => a.length >= minN).map(([w, a]) => ({ w, m: median(a) })).filter(o => o.m >= md * 1.5).sort((a, b) => b.m - a.m).slice(0, 3);
+  if (words.length) todo.push(`כותרות עם המילים ${words.map(o => `<b>${esc(o.w)}</b>`).join(', ')} מקבלות הרבה יותר צפיות מהרגיל. כדאי לבדוק מה משותף לסרטונים האלה (רשימה מלאה במסך "מה עובד").`);
+
+  const shown = cards.length > 2 && cards.length % 2 ? cards.slice(0, cards.length - 1) : cards;
+  $('#insights').innerHTML = shown.slice(0, 4).map(k => {
+    const mx = Math.max(...k.bars.map(b => b[1]), 1);
+    return `<article class="card"><span class="ctag">${k.tag}</span><div class="cbig">${k.big}</div><h3>${k.title}</h3><p>${k.text}</p><div class="cbars" aria-hidden="true">${k.bars.map(b => `<div class="cb${b[3] ? ' hi' : ''}"><span class="cl" title="${esc(String(b[0]))}">${esc(String(b[0]))}</span><span class="ct"><span style="width:${(b[1] / mx * 100).toFixed(1)}%"></span></span><span class="cv">${b[2]}</span></div>`).join('')}</div></article>`;
+  }).join('') || '<p class="empty">לא נמצאו הבדלים ברורים בתקופה הזו.</p>';
+  $('#todo').innerHTML = todo.length ? todo.map(t => `<li><span>${t}</span></li>`).join('') : '<li><span>בתקופה הזו אין המלצה ברורה. נסו תקופה ארוכה יותר.</span></li>';
+}
+
+/* ---------- programs ---------- */
+function renderProg(cur, prev) {
+  const key = r => r.ch * 1e5 + r.prog;
+  const groups = new Map(), before = new Map();
+  cur.forEach(r => { if (r.prog >= 0) { let g = groups.get(key(r)); if (!g) groups.set(key(r), g = []); g.push(r); } });
+  (prev || []).forEach(r => { if (r.prog >= 0) { let g = before.get(key(r)); if (!g) before.set(key(r), g = []); g.push(r); } });
+  const showCh = CUR === 'all';
+  let list = [...groups].map(([k, rs]) => {
+    const b = before.get(k) || [], m = median(rs.map(r => r.views)), pm = median(b.map(r => r.views));
+    return { k, name: progName(rs[0]), ch: rs[0].ch, n: rs.length, v: rs.reduce((a, r) => a + r.views, 0), m,
+      gr: rs.length >= 3 && b.length >= 3 ? m / Math.max(pm, 1) - 1 : null, last: rs.reduce((a, r) => r.ts > a.ts ? r : a) };
+  }).sort((a, b) => b.v - a.v);
+  const covered = cur.length ? cur.filter(r => r.prog >= 0).length / cur.length : 0;
+  const shown = S.progAll ? list : list.slice(0, 10);
+  const maxV = Math.max(...list.map(x => x.v), 1);
+  $('#prog').innerHTML = list.length ? `<table><thead><tr><th>תוכנית</th>${showCh ? '<th>ערוץ</th>' : ''}<th class="n">סרטונים</th><th class="n">סה״כ צפיות</th><th class="n">סרטון טיפוסי</th>${prev ? '<th class="n">שינוי מהתקופה שלפני</th>' : ''}</tr></thead><tbody>${shown.map(x => `<tr><td><button type="button" class="chlink" data-k="${x.k}">${esc(x.name)}</button></td>${showCh ? `<td style="white-space:nowrap">${esc(chName(x.ch))}</td>` : ''}<td class="n">${fmt(x.n)}</td><td class="n">${fmt(x.v)}<span class="minibar" style="width:${Math.round(x.v / maxV * 60)}px" aria-hidden="true"></span></td><td class="n">${fmt(x.m)}</td>${prev ? `<td class="n">${x.gr == null ? '–' : delta(1 + x.gr, 1)}</td>` : ''}</tr>`).join('')}</tbody></table>` : '<p class="insight">אין סרטונים משויכים לתוכניות בתקופה הזו.</p>';
+  $$('#prog .chlink').forEach(b => b.onclick = () => { const x = list.find(y => y.k === +b.dataset.k); S.prog = { k: x.k, name: x.name }; S.page = 0; renderAll(curRows()); show('videos'); document.getElementById('h-all').scrollIntoView({ behavior: 'smooth' }); });
+  const more = $('#prog-more');
+  more.hidden = list.length <= 10;
+  more.textContent = S.progAll ? 'הצג רק את 10 המובילות' : `הצג את כל ${fmt(list.length)} התוכניות`;
+  more.onclick = () => { S.progAll = !S.progAll; renderProg(curRows(), prevSlice()); };
+  $('#prog-sub').textContent = `כל שורה היא תוכנית, מסודרות לפי כמות הצפיות בתקופה שבחרת. לחיצה על שם תוכנית מציגה את הסרטונים שלה. (${Math.round(covered * 100)}% מהסרטונים שייכים לתוכנית מזוהה.)`;
+  if (!list.length) { $('#prog-ins').textContent = ''; return; }
+  const rising = list.filter(x => x.gr != null && x.n >= 5).sort((a, b) => b.gr - a.gr)[0];
+  const bestMed = list.filter(x => x.n >= 5).sort((a, b) => b.m - a.m)[0];
+  $('#prog-ins').innerHTML = `הכי הרבה צפיות: <b>${esc(list[0].name)}</b> (${cmp(list[0].v)} ב-${fmt(list[0].n)} סרטונים).` + (bestMed && bestMed !== list[0] ? ` סרטון רגיל מקבל הכי הרבה צפיות ב<b>${esc(bestMed.name)}</b> (${fmt(bestMed.m)} צפיות לסרטון).` : '') + (rising && rising.gr > 0.1 ? ` הכי השתפרו הסרטונים של <b>${esc(rising.name)}</b>: סרטון רגיל של ${esc(rising.name)} מקבל ${Math.round(rising.gr * 100)}% יותר צפיות מבתקופה שלפני.` : '');
+}
+
+/* ---------- growth from daily history ---------- */
+function renderGrowth(chs) {
+  const dates = [...new Set(chs.flatMap(c => c.history.map(h => h.d)))].sort().filter(d => chs.every(c => c.history.some(h => h.d === d)));
+  const at = (d, k) => chs.reduce((a, c) => a + c.history.find(h => h.d === d)[k], 0);
+  const pts = dates.map(d => ({ d, lab: d.slice(8, 10) + '.' + +d.slice(5, 7), subs: at(d, 'subs'), views: at(d, 'views') }));
+  const gains = pts.slice(1).map((p, i) => ({ ...p, g: p.views - pts[i].views }));
+  const since = new Date(IDX.tracking_since + 'T12:00:00').toLocaleDateString('he-IL');
+  ['#gr-views', '#gr-subs'].forEach(id => $(id).innerHTML = '');
+  if (!gains.length) {
+    $('#gr-views').innerHTML = `<p class="insight">המעקב היומי התחיל ב-${since}. מחר תופיע כאן העמודה הראשונה.</p>`;
+    $('#gr-subs').innerHTML = `<p class="insight">${fmt(pts[0]?.subs || 0)} מנויים ב-${since}.</p>`;
+    $('#gr-ins').textContent = ''; altTable('growth', [], []); return;
+  }
+  const W = 460, H = 220, M = { t: 14, r: 10, b: 26, l: 48 };
+  // daily views added: bars
+  let svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': 'צפיות שנוספו בכל יום', direction: 'ltr' }, $('#gr-views'));
+  let max = niceMax(Math.max(...gains.map(p => p.g)) * 1.08);
+  axisY(svg, W, H, M, max);
+  const bw = (W - M.l - M.r) / gains.length, gap = Math.min(4, bw * .3);
+  gains.forEach((p, i) => {
+    const h = Math.max((H - M.t - M.b) * Math.max(p.g, 0) / max, 1), x = M.l + bw * i + gap / 2, w = Math.min(Math.max(bw - gap, 2), 48), y = H - M.b - h;
+    const xc = x + (bw - gap - w) / 2, rx = Math.min(4, w / 2, h);
+    el('path', { d: `M${xc},${H - M.b}V${y + rx}Q${xc},${y} ${xc + rx},${y}H${xc + w - rx}Q${xc + w},${y} ${xc + w},${y + rx}V${H - M.b}Z`, fill: 'var(--s1)' }, svg);
+    const hit = el('rect', { x: M.l + bw * i, y: M.t, width: bw, height: H - M.t - M.b, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', e => showTip(`<b>${p.lab}</b><br>+<span class="num">${fmt(p.g)}</span> צפיות`, e.clientX, e.clientY));
+    hit.addEventListener('pointerleave', hideTip);
+  });
+  xLabels(svg, gains, i => M.l + bw * i + bw / 2, H, M);
+  // subscribers: line
+  svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': 'מספר מנויים לאורך זמן', direction: 'ltr' }, $('#gr-subs'));
+  const lo = Math.min(...pts.map(p => p.subs)), hi = Math.max(...pts.map(p => p.subs));
+  const pad = Math.max((hi - lo) * 0.2, hi * 0.002), y0 = Math.max(0, lo - pad), y1 = hi + pad;
+  for (let i = 0; i <= 4; i++) { const v = y0 + (y1 - y0) * i / 4, y = H - M.b - (H - M.t - M.b) * i / 4; el('line', { x1: M.l, x2: W - M.r, y1: y, y2: y, class: i ? 'gl' : 'base' }, svg); const t = el('text', { x: M.l - 6, y: y + 4, 'text-anchor': 'end' }, svg); t.textContent = hi - lo < hi * 0.05 ? fmt(v) : cmp(v); }
+  const xOf = i => M.l + (W - M.l - M.r) * (pts.length === 1 ? .5 : i / (pts.length - 1)), yOf = v => H - M.b - (H - M.t - M.b) * (v - y0) / (y1 - y0);
+  el('path', { d: pts.map((p, i) => `${i ? 'L' : 'M'}${xOf(i)},${yOf(p.subs)}`).join(''), fill: 'none', stroke: 'var(--s1)', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+  pts.forEach((p, i) => { const c = el('circle', { cx: xOf(i), cy: yOf(p.subs), r: i === pts.length - 1 ? 4.5 : 3, fill: 'var(--s1)', stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+    const hit = el('circle', { cx: xOf(i), cy: yOf(p.subs), r: 14, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', e => showTip(`<b>${p.lab}</b><br><span class="num">${fmt(p.subs)}</span> מנויים`, e.clientX, e.clientY)); hit.addEventListener('pointerleave', hideTip); });
+  xLabels(svg, pts, xOf, H, M);
+  const last = gains[gains.length - 1], best = gains.reduce((a, b) => b.g > a.g ? b : a), avg = gains.reduce((a, b) => a + b.g, 0) / gains.length;
+  $('#gr-ins').innerHTML = `ביום האחרון נוספו <b>${fmt(last.g)}</b> צפיות${gains.length > 1 ? `, מול ממוצע של ${fmt(avg)} ביום מאז ${since}. היום החזק: ${best.lab} (${fmt(best.g)})` : ''}. מנויים: מ-${fmt(pts[0].subs)} ל-${fmt(pts[pts.length - 1].subs)} (יוטיוב מעגל את המספר, לכן הוא זז בקפיצות).`;
+  altTable('growth', ['יום', 'צפיות שנוספו', 'מנויים'], gains.map(p => [p.lab, fmt(p.g), fmt(p.subs)]));
+}
+
+/* ---------- channel totals + highlights ---------- */
+const PILL = { milestone: 'אבן דרך', record: 'שיא', top: 'לטופ', trend: 'מתרומם', fast: 'פותח חזק' };
+function dayDelta(chs, key) {
+  if (!chs.every(c => c.history.length >= 2)) return null;
+  return chs.reduce((a, c) => { const h = c.history; return a + h[h.length - 1][key] - h[h.length - 2][key]; }, 0);
+}
+function renderTotals(chs) {
+  const since = new Date(IDX.tracking_since + 'T12:00:00').toLocaleDateString('he-IL');
+  const tile = (l, v, key, note) => {
+    const d = key ? dayDelta(chs, key) : null;
+    const dl = d == null ? `<span>מעקב יומי מ-${since}, השינוי מאתמול יופיע מחר</span>` : `<span class="delta ${d > 0 ? 'up' : d < 0 ? 'down' : ''}"><span aria-hidden="true">${d > 0 ? '▲' : d < 0 ? '▼' : '■'}</span> ${d > 0 ? '+' : ''}${fmt(d)}</span><span>מאתמול</span>`;
+    return `<div class="kpi"><span class="l">${l}</span><span class="v num">${v}</span><span class="d">${dl}</span>${note ? `<span class="d">${note}</span>` : ''}</div>`;
+  };
+  const sum = k => chs.reduce((a, c) => a + c[k], 0);
+  $('#totals').innerHTML = tile(chs.length > 1 ? 'מנויים במצטבר' : 'מנויים', cmp(sum('subs')), 'subs', fmt(sum('subs')) + (chs.length > 1 ? ', סכום כל הערוצים' : ', יוטיוב מעגל את המספר'))
+    + tile('צפיות בכל הזמנים', cmp(sum('views')), 'views', fmt(sum('views')))
+    + tile('סרטונים בערוץ', fmt(sum('videos')), 'videos', '');
+}
+function renderHl(slug) {
+  let list = IDX.highlights.filter(h => slug === 'all' || h.slug === slug);
+  if (slug === 'all') { const tr = list.filter(h => h.kind === 'trend').slice(0, 3); list = list.filter(h => h.kind !== 'trend').concat(tr); }
+  list = list.slice(0, 6);
+  $('#hl').innerHTML = list.length ? list.map(h => `<li><span class="pill ${h.kind}">${PILL[h.kind]}</span><span>${esc(h.text.replace(/חציון הצפיות לסרטון/g, 'מספר הצפיות של סרטון טיפוסי'))}${h.vid ? ` <a href="https://www.youtube.com/watch?v=${h.vid}" target="_blank" rel="noopener">לצפייה<span class="sr"> ביוטיוב</span></a>` : ''}</span></li>`).join('') : '<li><span class="pill trend">היום</span><span>אין שיאים או אבני דרך חדשים היום.</span></li>';
+  const hasHist = IDX.channels.some(c => c.history.length >= 2);
+  $('#hl-note').textContent = hasHist ? '' : 'המעקב היומי התחיל היום. מחר יתווספו השינויים מאתמול והסרטונים שהכי התרוממו, ואחרי שבוע גם שיאי צמיחה יומיים.';
+}
+
+/* ---------- channel comparison ---------- */
+function renderCmp(c, p) {
+  const rows = IDX.channels.map((ch, i) => {
+    const a = c.filter(r => r.ch === i), b = p ? p.filter(r => r.ch === i) : [];
+    const v = a.reduce((x, r) => x + r.views, 0), med = median(a.map(r => r.views)), pm = median(b.map(r => r.views));
+    return { c: ch, n: a.length, v, med, gr: p && b.length >= 5 && a.length >= 5 ? med / Math.max(pm, 1) - 1 : null };
+  }).sort((x, y) => y.v - x.v);
+  const maxV = Math.max(...rows.map(r => r.v), 1);
+  $('#cmp').innerHTML = `<table><thead><tr><th>ערוץ</th><th class="n">מנויים</th><th class="n">סרטונים שעלו</th><th class="n">צפיות שקיבלו</th><th class="n">סרטון טיפוסי</th>${p ? '<th class="n">שינוי מהתקופה שלפני</th>' : ''}</tr></thead><tbody>${rows.map(r => `<tr><td><button type="button" class="chlink" data-slug="${r.c.slug}">${esc(r.c.name)}</button></td><td class="n">${cmp(r.c.subs)}</td><td class="n">${fmt(r.n)}</td><td class="n">${cmp(r.v)}<span class="minibar" style="width:${Math.round(r.v / maxV * 70)}px" aria-hidden="true"></span></td><td class="n">${fmt(r.med)}</td>${p ? `<td class="n">${r.gr == null ? '–' : delta(1 + r.gr, 1)}</td>` : ''}</tr>`).join('')}</tbody></table>`;
+  $$('#cmp .chlink').forEach(b => b.onclick = () => { load(b.dataset.slug); show('home'); scrollTo({ top: 0 }); });
+  const act = rows.filter(r => r.n >= 5);
+  if (!act.length) { $('#cmp-ins').textContent = ''; return; }
+  const top = act[0], bestMed = act.reduce((a, b) => b.med > a.med ? b : a), grow = act.filter(r => r.gr != null).sort((a, b) => b.gr - a.gr)[0];
+  $('#cmp-ins').innerHTML = `הסרטונים של <b>${esc(top.c.name)}</b> הביאו הכי הרבה צפיות (${cmp(top.v)}).` + (bestMed !== top ? ` סרטון רגיל מקבל הכי הרבה צפיות ב<b>${esc(bestMed.c.name)}</b> (${fmt(bestMed.med)} לסרטון).` : '') + (grow && grow.gr > 0 ? ` הכי השתפרו מול התקופה שלפני: הסרטונים של <b>${esc(grow.c.name)}</b> (+${Math.round(grow.gr * 100)}%).` : '');
+}
+
+/* ---------- KPIs ---------- */
+function delta(a, b) {
+  if (!b) return '';
+  const d = a / b - 1; if (!isFinite(d)) return '';
+  const cls = d > 0.005 ? 'up' : d < -0.005 ? 'down' : '';
+  const arrow = d > 0.005 ? '▲' : d < -0.005 ? '▼' : '■';
+  return `<span class="delta ${cls}"><span aria-hidden="true">${arrow}</span> ${d > 0 ? '+' : ''}${(d * 100).toFixed(0)}%</span>`;
+}
+function renderKpis(c, p) {
+  const sv = a => a.reduce((s, r) => s + Math.max(r.views, 0), 0), v = sv(c), md = median(c.map(r => r.views));
+  const who = CUR === 'all' ? 'כל ערוצי כאן' : chName(IDX.channels.findIndex(x => x.slug === CUR));
+  $('#hero-eb').textContent = `${who} · ${({ '7': 'השבוע האחרון', '30': '30 הימים האחרונים', '90': '90 הימים האחרונים', '365': 'השנה האחרונה', '0': 'כל הזמנים' })[S.preset] || `${heDay(S.from)} עד ${heDay(Math.min(S.to, NOW))}`}`;
+  let d = null; if (p && p.length) d = v / Math.max(sv(p), 1) - 1;
+  const badge = d == null ? '' : Math.abs(d) < 0.03 ? '<span class="badge">≈ כמו קודם</span>' : `<span class="badge ${d > 0 ? 'up' : 'down'}">${d > 0 ? '▲' : '▼'} ${Math.round(Math.abs(d) * 100)}%</span>`;
+  if (!c.length) { $('#hero-h').textContent = 'בתקופה הזו לא עלו סרטונים'; $('#hero-sub').textContent = 'נסו לבחור תקופה ארוכה יותר למעלה.'; $('#kpis').innerHTML = ''; return; }
+  $('#hero-h').textContent = d == null ? `הסרטונים שעלו קיבלו ${heNum(v)} צפיות`
+    : Math.abs(d) < 0.03 ? `הסרטונים שעלו קיבלו ${heNum(v)} צפיות, בערך כמו בתקופה שלפני`
+    : d > 0 ? `תקופה טובה: הסרטונים שעלו קיבלו ${heNum(v)} צפיות, ${Math.round(d * 100)}% יותר מבתקופה שלפני`
+    : `הסרטונים שעלו קיבלו ${heNum(v)} צפיות, ${Math.round(-d * 100)}% פחות מבתקופה שלפני`;
+  $('#hero-sub').innerHTML = `עלו <b>${fmt(c.length)}</b> סרטונים${S.preset !== '0' ? `, בערך <b>${(c.length / S.days).toFixed(c.length / S.days < 10 ? 1 : 0)}</b> ביום` : ''}. סרטון רגיל קיבל <b>${fmt(md)}</b> צפיות: חצי מהסרטונים קיבלו יותר מזה, וחצי פחות.`;
+  const pv = p && p.length ? median(p.map(r => r.views)) : null;
+  const tile = (l, n, e) => `<div class="hs"><span class="l">${l}</span><span class="n">${n}</span><span class="e">${e}</span></div>`;
+  $('#kpis').innerHTML = tile('סרטונים עלו', fmt(c.length), p && p.length ? `לעומת ${fmt(p.length)} בתקופה שלפני` : 'בכל התקופה')
+    + tile('צפיות הם קיבלו', heNum(v), badge ? `${badge} לעומת התקופה שלפני` : 'בכל התקופה')
+    + tile('סרטון רגיל מקבל', fmt(md), pv ? `צפיות. בתקופה שלפני: ${fmt(pv)}` : 'צפיות');
+}
+
+/* ---------- time buckets ---------- */
+function bucketer() {
+  const p = S.days;
+  if (p <= 45) return { key: r => `${r.y}-${r.m}-${r.d}`, lab: r => `${r.d}.${r.m}`, unit: 'יום' };
+  if (p <= 180) return { key: r => { const t = r.ts - ((r.wd * 86400) + (r.hr * 3600)); const d = new Date(t * 1000); return d.toISOString().slice(0, 10); }, lab: (r, k) => { const [y, m, d] = k.split('-'); return `${+d}.${+m}`; }, unit: 'שבוע' };
+  return { key: r => `${r.y}-${String(r.m).padStart(2, '0')}`, lab: r => `${MON[r.m - 1]} ${String(r.y).slice(2)}`, unit: 'חודש' };
+}
+function buckets(cur) {
+  const b = bucketer(), map = new Map();
+  for (const r of cur) { const k = b.key(r); let e = map.get(k); if (!e) map.set(k, e = { k, lab: b.lab(r, k), rows: [] }); e.rows.push(r); }
+  return { unit: b.unit, list: [...map.values()].sort((a, c) => a.rows[0].ts - c.rows[0].ts) };
+}
+
+/* ---------- SVG helpers ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+function niceMax(v) { if (v <= 0) return 1; const p = 10 ** Math.floor(Math.log10(v)); const n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p; }
+function axisY(svg, W, H, M, max) {
+  for (let i = 0; i <= 4; i++) {
+    const v = max * i / 4, y = H - M.b - (H - M.t - M.b) * i / 4;
+    el('line', { x1: M.l, x2: W - M.r, y1: y, y2: y, class: i ? 'gl' : 'base' }, svg);
+    const t = el('text', { x: M.l - 6, y: y + 4, 'text-anchor': 'end' }, svg); t.textContent = cmp(v);
+  }
+}
+function xLabels(svg, list, xOf, H, M) {
+  const every = Math.ceil(list.length / 7);
+  list.forEach((b, i) => { if (i % every && i !== list.length - 1) return; const t = el('text', { x: xOf(i), y: H - M.b + 16, 'text-anchor': 'middle' }, svg); t.textContent = b.lab; });
+}
+function altTable(id, heads, rows) {
+  const host = document.getElementById(id + '-alt') || (() => { const d = document.createElement('div'); d.id = id + '-alt'; d.className = 'alt-table tscroll'; document.getElementById(id).after(d); return d; })();
+  host.hidden = !S.alt[id];
+  if (!S.alt[id]) { host.innerHTML = ''; return; }
+  host.innerHTML = `<table><thead><tr>${heads.map((h, i) => `<th class="${i ? 'n' : ''}">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map((c, i) => `<td class="${i ? 'n' : ''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+$$('.tbl-toggle[data-for]').forEach(b => b.onclick = () => { const id = b.dataset.for; S.alt[id] = !S.alt[id]; b.setAttribute('aria-expanded', S.alt[id]); b.textContent = S.alt[id] ? 'הסתר טבלה' : 'הצג כטבלה'; if (id === 'growth') renderGrowth(CUR === 'all' ? IDX.channels : IDX.channels.filter(c => c.slug === CUR)); else render(); });
+
+/* ---------- trend: median views per video ---------- */
+function renderTrend(cur) {
+  const { unit, list } = buckets(cur);
+  const host = $('#trend'); host.innerHTML = '';
+  $('#trend-sub').textContent = `כל נקודה היא ${unit}: כמה צפיות קיבל סרטון טיפוסי שעלה באותו ${unit}. קו שעולה = הסרטונים מקבלים יותר צפיות מבעבר.`;
+  if (list.length < 2) { host.innerHTML = '<p class="insight">אין מספיק נתונים בתקופה הזו.</p>'; $('#trend-ins').textContent = ''; altTable('trend', [], []); return; }
+  const pts = list.map(b => ({ lab: b.lab, v: median(b.rows.map(r => r.views)), n: b.rows.length }));
+  const W = 640, H = 260, M = { t: 14, r: 12, b: 26, l: 46 };
+  const max = niceMax(Math.max(...pts.map(p => p.v)) * 1.05);
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-labelledby': 'h-trend trend-ins', direction: 'ltr' }, host);
+  axisY(svg, W, H, M, max);
+  const xOf = i => M.l + (W - M.l - M.r) * (pts.length === 1 ? .5 : i / (pts.length - 1));
+  const yOf = v => H - M.b - (H - M.t - M.b) * v / max;
+  const line = pts.map((p, i) => `${i ? 'L' : 'M'}${xOf(i).toFixed(1)},${yOf(p.v).toFixed(1)}`).join('');
+  el('path', { d: line + `L${xOf(pts.length - 1)},${H - M.b}L${xOf(0)},${H - M.b}Z`, fill: 'var(--s1)', 'fill-opacity': .1, stroke: 'none' }, svg);
+  el('path', { d: line, fill: 'none', stroke: 'var(--s1)', 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+  const last = pts[pts.length - 1];
+  el('circle', { cx: xOf(pts.length - 1), cy: yOf(last.v), r: 4.5, fill: 'var(--s1)', stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+  const lt = el('text', { x: xOf(pts.length - 1) - 8, y: yOf(last.v) - 10, 'text-anchor': 'end', style: 'fill:var(--ink);font-weight:500' }, svg); lt.textContent = fmt(last.v);
+  xLabels(svg, pts, xOf, H, M);
+  const cross = el('line', { y1: M.t, y2: H - M.b, stroke: 'var(--ink-3)', 'stroke-dasharray': '3 3', opacity: 0 }, svg);
+  const dot = el('circle', { r: 4.5, fill: 'var(--s1)', stroke: 'var(--surface)', 'stroke-width': 2, opacity: 0 }, svg);
+  const hit = el('rect', { x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b, fill: 'transparent' }, svg);
+  hit.addEventListener('pointermove', e => {
+    const bb = svg.getBoundingClientRect(), x = (e.clientX - bb.left) * W / bb.width;
+    const i = Math.max(0, Math.min(pts.length - 1, Math.round((x - M.l) / (W - M.l - M.r) * (pts.length - 1)))), p = pts[i];
+    cross.setAttribute('x1', xOf(i)); cross.setAttribute('x2', xOf(i)); cross.setAttribute('opacity', 1);
+    dot.setAttribute('cx', xOf(i)); dot.setAttribute('cy', yOf(p.v)); dot.setAttribute('opacity', 1);
+    showTip(`<b>${p.lab}</b><br>סרטון טיפוסי: <span class="num">${fmt(p.v)}</span> צפיות<br>${fmt(p.n)} סרטונים עלו`, e.clientX, e.clientY);
+  });
+  hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); dot.setAttribute('opacity', 0); hideTip(); });
+  const first = pts[0], ratio = last.v / Math.max(first.v, 1);
+  const peak = pts.reduce((a, b) => b.v > a.v ? b : a);
+  $('#trend-ins').innerHTML = `ב${unit} האחרון סרטון טיפוסי קיבל <b>${fmt(last.v)}</b> צפיות, ${ratio >= 1 ? `פי <b>${ratio.toFixed(ratio < 10 ? 1 : 0)}</b> יותר` : `<b>${Math.round((1 - ratio) * 100)}%</b> פחות`} מאשר ב${unit} של ${first.lab}. השיא: ${unit} ${peak.lab}, עם ${fmt(peak.v)}. ${S.days > 45 ? 'סרטונים חדשים עוד צוברים צפיות, כך שהנקודה האחרונה צפויה לעלות.' : ''}`;
+  altTable('trend', [unit, 'צפיות לסרטון טיפוסי', 'סרטונים שעלו'], pts.map(p => [p.lab, fmt(p.v), fmt(p.n)]));
+  renderVol(list, unit);
+}
+
+/* ---------- upload volume stacked ---------- */
+function renderVol(list, unit) {
+  const host = $('#vol'); host.innerHTML = '';
+  $('#vol-sub').textContent = `כמה סרטונים עלו בכל ${unit}. כל צבע הוא סוג אחר של תוכן (המקרא מתחת לגרף).`;
+  const types = [0, 1, 2].filter(t => S.types.has(t));
+  const W = 460, H = 260, M = { t: 14, r: 8, b: 26, l: 40 };
+  const tot = list.map(b => b.rows.length), max = niceMax(Math.max(...tot) * 1.05);
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart', role: 'img', 'aria-label': `מספר העלאות לפי ${unit} וסוג`, direction: 'ltr' }, host);
+  axisY(svg, W, H, M, max);
+  const bw = (W - M.l - M.r) / list.length, gap = Math.min(4, bw * .25);
+  const xOf = i => M.l + bw * i + bw / 2;
+  list.forEach((b, i) => {
+    let y0 = H - M.b; const counts = types.map(t => b.rows.filter(r => r.type === t).length);
+    const topIdx = counts.reduce((a, c, j) => c ? j : a, -1);
+    counts.forEach((c, j) => {
+      if (!c) return; const h = (H - M.t - M.b) * c / max; const y = y0 - h;
+      const rx = j === topIdx ? Math.min(4, (bw - gap) / 2) : 0;
+      const x = M.l + bw * i + gap / 2, w = Math.max(bw - gap, 1);
+      if (rx) el('path', { d: `M${x},${y0 - (j ? 1 : 0)}V${y + rx}Q${x},${y} ${x + rx},${y}H${x + w - rx}Q${x + w},${y} ${x + w},${y + rx}V${y0 - (j ? 1 : 0)}Z`, fill: TCOL[types[j]] }, svg);
+      else el('rect', { x, y: y + (j < topIdx ? 1 : 0), width: w, height: Math.max(h - 1, 0.5), fill: TCOL[types[j]] }, svg);
+      y0 = y;
+    });
+    const hit = el('rect', { x: M.l + bw * i, y: M.t, width: bw, height: H - M.t - M.b, fill: 'transparent' }, svg);
+    hit.addEventListener('pointermove', e => showTip(`<b>${b.lab}</b><br>${types.map((t, j) => `${TYPES[t]}: <span class="num">${fmt(counts[j])}</span>`).join('<br>')}<br>סה״כ: <span class="num">${fmt(b.rows.length)}</span>`, e.clientX, e.clientY));
+    hit.addEventListener('pointerleave', hideTip);
+  });
+  xLabels(svg, list, xOf, H, M);
+  $('#vol-leg').innerHTML = types.map(t => `<span><i style="--c:${TCOL[t]}"></i>${TYPES[t]}</span>`).join('');
+  altTable('vol', [unit, ...types.map(t => TYPES[t]), 'סה״כ'], list.map(b => [b.lab, ...types.map(t => fmt(b.rows.filter(r => r.type === t).length)), fmt(b.rows.length)]));
+}
+
+/* ---------- schedule grid ---------- */
+function renderSched(cur) {
+  const pool = cur.filter(r => r.type !== 2);
+  const minN = Math.max(8, Math.round(pool.length / 400));
+  const cells = Array.from({ length: 7 }, () => Array.from({ length: 24 }, () => []));
+  pool.forEach(r => cells[r.wd][r.hr].push(r.views));
+  const med = cells.map(row => row.map(v => v.length >= minN ? median(v) : null));
+  const vals = med.flat().filter(v => v != null).sort((a, b) => a - b);
+  const q = p => vals[Math.min(vals.length - 1, Math.floor(p * vals.length))];
+  const cuts = [q(.2), q(.4), q(.6), q(.8), q(.95)];
+  const step = v => cuts.filter(c => v >= c).length;
+  const host = $('#sched');
+  let h = '<div></div>' + Array.from({ length: 24 }, (_, i) => `<div class="hh">${String(i).padStart(2, '0')}</div>`).join('');
+  for (let d = 0; d < 7; d++) {
+    h += `<div class="dd">${DAYS[d]}</div>`;
+    for (let hr = 0; hr < 24; hr++) {
+      const v = med[d][hr], n = cells[d][hr].length;
+      h += v == null ? `<div class="c na" data-d="${d}" data-h="${hr}" data-n="${n}"></div>` : `<div class="c" style="background:var(--seq${step(v)})" data-d="${d}" data-h="${hr}" data-v="${v}" data-n="${n}"></div>`;
+    }
+  }
+  host.innerHTML = h;
+  host.setAttribute('aria-label', 'משבצות של צפיות לסרטון טיפוסי לפי יום ושעה. לפירוט, הצג כטבלה.');
+  host.onpointermove = e => { const c = e.target.closest('.c'); if (!c) return hideTip(); const d = c.dataset; showTip(`<b>יום ${DAYS[d.d]}, ${String(d.h).padStart(2, '0')}:00</b><br>${d.v ? `סרטון טיפוסי: <span class="num">${fmt(+d.v)}</span> צפיות<br>` : 'מעט מדי סרטונים כדי לדעת<br>'}${fmt(+d.n)} סרטונים עלו בשעה הזו`, e.clientX, e.clientY); };
+  host.onpointerleave = hideTip;
+  $('#sched-scale').innerHTML = `<span>פחות צפיות</span><span class="ramp">${[0, 1, 2, 3, 4, 5].map(i => `<i style="background:var(--seq${i})"></i>`).join('')}</span><span>יותר צפיות</span><span style="margin-inline-start:12px">משבצת מקווקוות: עלו פחות מ-${minN} סרטונים</span>`;
+  const best = []; med.forEach((row, d) => row.forEach((v, hr) => v != null && best.push({ d, hr, v, n: cells[d][hr].length })));
+  best.sort((a, b) => b.v - a.v);
+  const all = median(pool.map(r => r.views));
+  const byDay = DAYS.map((_, d) => median(pool.filter(r => r.wd === d).map(r => r.views)));
+  const bd = byDay.indexOf(Math.max(...byDay)), wd = byDay.indexOf(Math.min(...byDay));
+  $('#sched-ins').innerHTML = best.length ? `היום הכי טוב להעלות: <b>${DAYS[bd]}</b> (סרטון טיפוסי מקבל ${fmt(byDay[bd])} צפיות). הכי חלש: <b>${DAYS[wd]}</b> (${fmt(byDay[wd])}). השעות הכי חזקות: ${best.slice(0, 3).map(b => `<b>${DAYS[b.d]} ${String(b.hr).padStart(2, '0')}:00</b>`).join(', ')}, שם סרטון מקבל פי ${(best[0].v / Math.max(all, 1)).toFixed(1)} צפיות מסרטון רגיל.` : '';
+  S.alt.sched ? ($('#sched-alt').className = 'alt-table tscroll', $('#sched-alt').innerHTML = `<table><thead><tr><th>יום</th><th class="n">סרטון טיפוסי</th><th class="n">סרטונים שעלו</th><th>3 השעות החזקות</th></tr></thead><tbody>${DAYS.map((n, d) => { const t = best.filter(b => b.d === d).slice(0, 3); return `<tr><td>${n}</td><td class="n">${fmt(byDay[d])}</td><td class="n">${fmt(pool.filter(r => r.wd === d).length)}</td><td>${t.map(b => `${String(b.hr).padStart(2, '0')}:00 (${cmp(b.v)})`).join(', ') || '–'}</td></tr>`; }).join('')}</tbody></table>`) : ($('#sched-alt').innerHTML = '');
+}
+
+/* ---------- duration ---------- */
+const DB = [[0, 30, 'עד 30 שנ׳'], [30, 60, '30-60 שנ׳'], [60, 120, '1-2 דק׳'], [120, 300, '2-5 דק׳'], [300, 600, '5-10 דק׳'], [600, 1200, '10-20 דק׳'], [1200, 3600, '20-60 דק׳'], [3600, 1e9, 'מעל שעה']];
+function renderDur(cur) {
+  const pool = cur.filter(r => r.type !== 2 && r.dur > 0);
+  const rows = DB.map(([lo, hi, l]) => { const rs = pool.filter(r => r.dur >= lo && r.dur < hi); return { l, n: rs.length, v: median(rs.map(r => r.views)) }; }).filter(r => r.n >= 5);
+  const max = Math.max(...rows.map(r => r.v), 1);
+  $('#dur').innerHTML = rows.map(r => `<div class="hb"><span class="k">${r.l} <small>· ${fmt(r.n)}</small></span><span class="t" role="presentation"><span class="f" style="display:block;width:${(r.v / max * 100).toFixed(1)}%"></span></span><span class="v">${fmt(r.v)}</span></div>`).join('') || '<p class="insight">אין מספיק נתונים.</p>';
+  if (rows.length) {
+    const best = rows.reduce((a, b) => b.v > a.v ? b : a), most = rows.reduce((a, b) => b.n > a.n ? b : a);
+    $('#dur-ins').innerHTML = `הכי הרבה סרטונים עולים באורך <b>${most.l}</b> (${fmt(most.n)} סרטונים), ושם סרטון טיפוסי מקבל ${fmt(most.v)} צפיות. האורך שעובד הכי טוב: <b>${best.l}</b>, עם ${fmt(best.v)} צפיות${best !== most ? `, פי ${(best.v / Math.max(most.v, 1)).toFixed(1)}` : ''}.`;
+  } else $('#dur-ins').textContent = '';
+}
+
+/* ---------- keywords ---------- */
+const STOP = new Set('של את על עם לא זה גם כי אם או הוא היא הם הן אני אנחנו אתם מה מי איך למה כל יש אין היה היו יהיה אחרי לפני בין עד רק כך כמו אבל עוד כבר שלא מול אל זו אלה שם פה הזה הזאת לו לה להם ממש כדי בו בה עכשיו היום אחד אחת שני שתי כאן ועוד מאוד יותר פחות'.split(' '));
+function renderKw(cur) {
+  const minN = Math.max(8, Math.round(cur.length * .006));
+  const map = new Map();
+  for (const r of cur) { const ws = new Set((r.lt.match(/[֐-׿a-z0-9"'״׳]{2,}/g) || []).filter(w => !STOP.has(w))); ws.forEach(w => { let a = map.get(w); if (!a) map.set(w, a = []); a.push(r.views); }); }
+  const all = median(cur.map(r => r.views));
+  let list = [...map].filter(([, a]) => a.length >= minN).map(([w, a]) => ({ w, n: a.length, v: median(a) }));
+  list.sort((a, b) => S.kwTab === 'top' ? b.v - a.v : a.v - b.v); list = list.slice(0, 12);
+  $('#kw-sub').textContent = `מילים שמופיעות ב-${minN} כותרות לפחות. המספר: כמה צפיות מקבל סרטון טיפוסי שהמילה בכותרת שלו. ×2 = פי 2 מסרטון רגיל (${fmt(all)} צפיות).`;
+  const max = Math.max(...list.map(r => r.v), 1);
+  $('#kw').innerHTML = list.map(r => `<div class="hb" style="--c:${S.kwTab === 'top' ? 'var(--s1)' : 'var(--ink-3)'}"><span class="k" title="${esc(r.w)}">${esc(r.w)} <small>· ${fmt(r.n)}</small></span><span class="t" role="presentation"><span class="f" style="display:block;width:${(r.v / max * 100).toFixed(1)}%"></span></span><span class="v">${cmp(r.v)} <small style="color:var(--ink-3)">${r.v >= all ? '×' + (r.v / Math.max(all, 1)).toFixed(1) : '-' + Math.round((1 - r.v / all) * 100) + '%'}</small></span></div>`).join('') || '<p class="insight">אין מספיק כותרות בתקופה הזו.</p>';
+}
+$$('#kw-tabs button').forEach(b => b.onclick = () => { S.kwTab = b.dataset.v; $$('#kw-tabs button').forEach(x => x.setAttribute('aria-selected', x === b)); renderKw(curRows()); });
+
+/* ---------- tables ---------- */
+const url = r => (r.type === 1 ? 'https://www.youtube.com/shorts/' : 'https://www.youtube.com/watch?v=') + r.id;
+const dstr = r => `${r.d}.${r.m}.${String(r.y).slice(2)}`;
+const typeTag = r => r.live ? '<span class="tag live">LIVE</span>' : `<span class="tag" style="--c:${TCOL[r.type]}">${TYPES[r.type]}</span>`;
+function rowsTable(list, rank) {
+  const showCh = CUR === 'all';
+  const EX = {
+    views: ['לייקים', r => fmt(r.likes)],
+    vpd: ['צפיות ליום', r => fmt(r.vpd)],
+    eng: ['לייקים ותגובות לכל 100 צפיות', r => (r.eng * 100).toFixed(1)],
+    idx: ['פי כמה מסרטון רגיל', r => r.idx > 0 ? `<span class="idx ${r.idx >= 1.5 ? 'hi' : r.idx <= 0.67 ? 'lo' : ''}">×${r.idx < 10 ? r.idx.toFixed(1) : Math.round(r.idx)}</span>` : '–'],
+    gain: ['צפיות מאתמול', r => '+' + fmt(r.gain)],
+  };
+  const [xh, xf] = rank ? EX[S.topTab] : EX.views;
+  return `<table><thead><tr>${rank ? '<th class="n">#</th>' : ''}<th>כותרת</th>${showCh ? '<th>ערוץ</th>' : ''}<th>סוג</th><th class="n">תאריך</th><th class="n">צפיות</th><th class="n">${xh}</th></tr></thead><tbody>${list.map((r, i) => `<tr>${rank ? `<td class="n">${i + 1}</td>` : ''}<td class="ttl"><a href="${url(r)}" target="_blank" rel="noopener">${esc(r.title)}<span class="sr"> (נפתח ביוטיוב)</span></a></td>${showCh ? `<td style="white-space:nowrap">${esc(chName(r.ch))}</td>` : ''}<td>${typeTag(r)}</td><td class="n">${dstr(r)}</td><td class="n"><b>${fmt(r.views)}</b></td><td class="n">${xf(r)}</td></tr>`).join('')}</tbody></table>`;
+}
+function renderTop(cur) {
+  let pool = S.topTab === 'idx' ? R.filter(r => S.types.has(r.type) && r.age <= 14 && r.idx > 0 && r.views >= 1000) : S.topTab === 'gain' ? R.filter(r => S.types.has(r.type) && r.gain > 0) : cur; if (S.topTab === 'eng') pool = cur.filter(r => r.views >= Math.max(1000, median(cur.map(x => x.views))));
+  const list = pool.slice().sort((a, b) => b[S.topTab] - a[S.topTab]).slice(0, 10);
+  $('#top').innerHTML = list.length ? rowsTable(list, true) : '<p class="insight">אין סרטונים בתקופה.</p>';
+}
+$$('#top-tabs button').forEach(b => b.onclick = () => { S.topTab = b.dataset.v; $$('#top-tabs button').forEach(x => x.setAttribute('aria-selected', x === b)); renderTop(curRows()); });
+const SORTS = { ts: 'תאריך', views: 'צפיות', likes: 'לייקים', vpd: 'צפיות ליום' };
+function renderAll(cur) {
+  const qs = S.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  let list = qs.length ? cur.filter(r => qs.every(q => r.lt.includes(q))) : cur;
+  if (S.prog) list = list.filter(r => r.prog >= 0 && r.ch * 1e5 + r.prog === S.prog.k);
+  list.sort((a, b) => (a[S.sort] - b[S.sort]) * S.dir);
+  const per = 25, pages = Math.max(1, Math.ceil(list.length / per)); S.page = Math.min(S.page, pages - 1);
+  $('#all-sub').innerHTML = (S.prog ? `<span class="pchip">תוכנית: <b>${esc(S.prog.name)}</b><button type="button" id="prog-clear">הסר סינון</button></span>` : '') + `${fmt(list.length)} סרטונים${qs.length || S.prog ? ` שמתאימים לחיפוש, סרטון טיפוסי: <b>${fmt(median(list.map(r => r.views)))}</b>` : ''}. מיון לפי: ${Object.entries(SORTS).map(([k, l]) => `<button type="button" class="tbl-toggle" data-sort="${k}" aria-pressed="${S.sort === k}">${l}${S.sort === k ? (S.dir < 0 ? ' ▼' : ' ▲') : ''}</button>`).join(' · ')}`;
+  if (S.prog) $('#prog-clear').onclick = () => { S.prog = null; S.page = 0; renderAll(curRows()); };
+  $$('#all-sub [data-sort]').forEach(b => b.onclick = () => { const k = b.dataset.sort; if (S.sort === k) S.dir *= -1; else { S.sort = k; S.dir = -1; } S.page = 0; renderAll(curRows()); });
+  $('#all').innerHTML = list.length ? rowsTable(list.slice(S.page * per, S.page * per + per), false) : '<p class="insight">לא נמצאו סרטונים. נסו מילה אחרת או תקופה ארוכה יותר.</p>';
+  $('#pager').innerHTML = pages > 1 ? `<button type="button" id="pp" ${S.page ? '' : 'disabled'}>הקודם</button><span>עמוד ${S.page + 1} מתוך ${fmt(pages)}</span><button type="button" id="pn" ${S.page < pages - 1 ? '' : 'disabled'}>הבא</button>` : '';
+  if (pages > 1) { $('#pp').onclick = () => { S.page--; renderAll(curRows()); }; $('#pn').onclick = () => { S.page++; renderAll(curRows()); }; }
+}
+let qt; $('#q').addEventListener('input', e => { clearTimeout(qt); qt = setTimeout(() => { S.q = e.target.value; S.page = 0; renderAll(curRows()); }, 180); });
+
+/* ---------- filters ---------- */
+$$('#period button').forEach(b => b.onclick = () => { setRange(b.dataset.v); S.page = 0; if (R) render(); });
+['#d-from', '#d-to'].forEach(id => $(id).addEventListener('change', () => {
+  let f = $('#d-from').value, t = $('#d-to').value;
+  if (!f || !t) return;
+  if (f > t) [f, t] = [t, f];
+  S.preset = 'custom'; S.from = Date.parse(f + 'T00:00:00+03:00') / 1000; S.to = Date.parse(t + 'T23:59:59+03:00') / 1000;
+  syncRange(); S.page = 0; if (R) render();
+}));
+$$('.chip').forEach(b => b.onclick = () => {
+  const t = +b.dataset.t;
+  if (S.types.has(t) && S.types.size === 1) return;
+  S.types.has(t) ? S.types.delete(t) : S.types.add(t);
+  b.setAttribute('aria-pressed', S.types.has(t)); S.page = 0; if (R) render();
+});
+})();
+</script>
